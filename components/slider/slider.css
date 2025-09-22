@@ -1,0 +1,23 @@
+.slider {
+	background-color: black;
+	padding: 200px 0;
+	border-radius: 28px;
+}
+
+.slide-list {
+	display: grid;
+	gap: 12px;
+}
+
+.button {
+	padding: 0 32px 0 14px;
+	height: 56px;
+	border-radius: 90px;
+	background-color: rgb(30, 30, 32);
+	font-size: 17px;
+	font-weight: 600;
+}
+
+.button:hover {
+	background-color: rgb(48, 48, 51);
+}
