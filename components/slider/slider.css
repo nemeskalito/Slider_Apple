@@ -1,42 +1,82 @@
 .slider {
-	background-color: black;
-	height: 600px;
-	border-radius: 28px;
+  background-color: black;
+  height: 600px;
+  border-radius: 28px;
 }
 
 .controls {
-	padding-left: 60px;
-	height: 100%;
+  padding-left: 60px;
+  height: 100%;
 }
 
 .slide-list {
-	display: grid;
-	gap: 12px;
-	height: 100%;
-	display: flex;
-	flex-direction: column;
-	gap: 12p;
-	justify-content: center;
+  display: grid;
+  gap: 12px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 12p;
+  justify-content: center;
 }
 
 .button {
-	max-width: 374px;
-	text-align: left;
-	display: flex;
-	align-items: center;
-	gap: 10px;
-	padding: 14px 32px 14px 14px;
-	border-radius: 90px;
-	background-color: rgb(30, 30, 32);
-	font-size: 17px;
-	font-weight: 600;
+  max-width: 374px;
+  text-align: left;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 32px 14px 14px;
+  border-radius: 26px;
+  background-color: rgb(30, 30, 32);
+  font-size: 17px;
+  font-weight: 600;
+  transition: all 0.2s ease-in;
 }
 
 .button:hover {
-	background-color: rgb(48, 48, 51);
+  background-color: rgb(48, 48, 51);
 }
 
 .button__icon {
-	border: 1px solid white;
-	border-radius: 50%;
+  border: 1px solid white;
+  border-radius: 50%;
+}
+
+.button--open {
+  padding: 24px;
+}
+.controls__arrows {
+  position: relative;
+  pointer-events: all;
+  transition: all 0.3s;
+  transform: translateY(0px);
+}
+
+.constrols__arows--hidden {
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(100px);
+}
+.arrow__down,
+.arrow__up {
+  background-color: #333;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  left: -50px;
+  transform: translateY(-50%);
+}
+
+.arrow__up {
+  top: 270px;
+}
+.arrow__up[disabled],
+.arrow__down[disabled] {
+  opacity: 0.2;
+  cursor: auto;
+}
+
+.arrow__down {
+  top: 330px;
 }

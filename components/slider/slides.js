@@ -3,7 +3,7 @@ export default [
 		id: 1,
 		title: 'Colors',
 		desc: 'Choose from three bold finishes. iPhone 17 Pro shown in Deep Blue.',
-		isActive: true,
+		isActive: false,
 	},
 	{
 		id: 2,
