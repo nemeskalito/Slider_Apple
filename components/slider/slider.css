@@ -1,12 +1,20 @@
 .slider {
+  position: relative;
   background-color: black;
   height: 600px;
   border-radius: 28px;
+  overflow: hidden;
 }
 
 .controls {
+  display: flex;
+  align-items: center;
   padding-left: 60px;
   height: 100%;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 .slide-list {
@@ -15,7 +23,6 @@
   height: 100%;
   display: flex;
   flex-direction: column;
-  gap: 12p;
   justify-content: center;
 }
 
@@ -27,13 +34,14 @@
   gap: 10px;
   padding: 14px 32px 14px 14px;
   border-radius: 26px;
-  background-color: rgb(30, 30, 32);
+  background-color: rgba(30, 30, 32, 0.8);
   font-size: 17px;
   font-weight: 600;
   transition: all 0.2s ease-in;
+  backdrop-filter: blur(5px);
 }
 
-.button:hover {
+.button:not(.button--open):hover {
   background-color: rgb(48, 48, 51);
 }
 
@@ -46,16 +54,18 @@
   padding: 24px;
 }
 .controls__arrows {
-  position: relative;
   pointer-events: all;
   transition: all 0.3s;
-  transform: translateY(0px);
+  transform: translate(-30px, 0px);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
 .constrols__arows--hidden {
   opacity: 0;
   pointer-events: none;
-  transform: translateY(100px);
+  transform: translate(-30px, 100px);
 }
 .arrow__down,
 .arrow__up {
@@ -63,13 +73,10 @@
   border-radius: 50%;
   width: 40px;
   height: 40px;
-  position: absolute;
-  left: -50px;
-  transform: translateY(-50%);
 }
 
 .arrow__up {
-  top: 270px;
+  transform: translateY(20px);
 }
 .arrow__up[disabled],
 .arrow__down[disabled] {
@@ -78,5 +85,20 @@
 }
 
 .arrow__down {
-  top: 330px;
+  transform: translateY(20px);
+}
+
+.content {
+  width: 100%;
+  height: 100%;
+  margin-top: -100px;
+}
+
+.slide-content {
+  width: 100%;
+  height: 100%;
+}
+
+.object-cover {
+  object-fit: cover;
 }
