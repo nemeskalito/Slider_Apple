@@ -11,7 +11,8 @@ export default [
     title: "Aluminum unibody",
     desc: "Optimized for performance and battery. Aluminum alloy is remarkably light and has exceptional thermal conductivity.",
     isActive: false,
-    img: "unibody.jpg",
+    content: { type: "video", url: "unibody.mp4", cover: "unibody.jpg" },
+		img: "unibody.jpg",
   },
   {
     id: 3,

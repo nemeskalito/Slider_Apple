@@ -1,10 +1,11 @@
 "use client";
 
-import { use, useState } from "react";
+import { useState } from "react";
 import "./slider.css";
 
 import slidesData from "./slides";
-import FadeIn from "../FaleIn";
+import FadeIn from "../FadeIn";
+import SliderContent from "./SliderContent";
 
 const SlideItem = ({ data, handler, index }) => {
   return (
@@ -85,7 +86,7 @@ const Slider = () => {
       <div className="controls">
         <div
           className={`controls__arrows ${
-            activeSlide === null && "constrols__arows--hidden"
+            activeSlide === null ? "controls__arrows--hidden" : ""
           }`}
         >
           <button
@@ -116,18 +117,7 @@ const Slider = () => {
         </ul>
       </div>
       <div className="content">
-        {activeSlide !== null && (
-          <FadeIn>
-            {" "}
-            <div className="slide-content">
-              <img
-                className="object-cover"
-                src={`./img/slides/${slides[activeSlide]["img"]}`}
-                alt=""
-              />
-            </div>
-          </FadeIn>
-        )}
+        {activeSlide !== null && <SliderContent activeSlide={activeSlide} />}
       </div>
     </div>
   );
